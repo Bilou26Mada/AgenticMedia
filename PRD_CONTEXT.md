@@ -1,7 +1,7 @@
-# 📚 News Ledger — Product Requirements Document & Context
+# 📚 Agentic News — Product Requirements Document & Context
 
 ## 1. Vision & Objectif
-**News Ledger** est une plateforme d'agrégation de signaux (News/Intel) destinée aux professionnels de la tech : Ingénieurs IA, Quants (Trading Algorithmique), et fondateurs Fintech.
+**Agentic News** est une plateforme d'agrégation de signaux (News/Intel) destinée aux professionnels de la tech : Ingénieurs IA, Quants (Trading Algorithmique), et fondateurs Fintech.
 Son but est d'éliminer le "bruit" des réseaux sociaux en centralisant des flux RSS hautement qualitatifs dans une interface minimaliste, sombre (glassmorphism), ultra-rapide et sans publicité.
 
 ---

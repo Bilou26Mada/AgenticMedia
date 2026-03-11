@@ -1,8 +1,8 @@
 import type { CategoryId } from './feeds';
 
 export const SITE = {
-  name: 'Agentique',
-  url: 'https://agentique.media',
+  name: 'Agentic News',
+  url: 'https://agentic.news',
   shortDescription: 'Le media francophone de reference sur les agents IA, leur stack, leurs usages reels et leur gouvernance.',
   description:
     'Le media francophone qui suit ce que les agents savent reellement faire, avec quels outils, a quels couts, et avec quels risques.',

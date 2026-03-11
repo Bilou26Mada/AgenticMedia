@@ -1,4 +1,4 @@
-# News Ledger
+# Agentic News
 
 Intelligence agrégée pour les professionnels de l'IA, du trading quantitatif et de la fintech.
 
@@ -32,7 +32,7 @@ Un document technique complet a été rédigé pour les développeurs reprenant 
 
 ## ☁️ Déploiement Vercel
 
-Le moyen le plus simple de déployer **News Ledger** avec l'ISR activé est d'utiliser Vercel :
+Le moyen le plus simple de déployer **Agentic News** avec l'ISR activé est d'utiliser Vercel :
 1. Créez un projet sur [Vercel](https://vercel.com/new).
 2. Liez votre dépôt GitHub.
 3. Les paramètres Next.js sont détectés automatiquement. Cliquez sur **Deploy**.
