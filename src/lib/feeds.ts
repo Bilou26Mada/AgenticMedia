@@ -445,7 +445,20 @@ async function fetchRssItems(source: FeedSource): Promise<FeedItem[]> {
 }
 
 function stripTags(input: string) {
-  return input.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
+  // Remove full tags
+  let cleaned = input.replace(/<[^>]+>/g, ' ');
+  // Remove partial tag start at the beginning (e.g., 'class="foo">')
+  cleaned = cleaned.replace(/^[^<]*>/, ' ');
+  // Remove partial tag end at the completion (e.g., '<div class="bar')
+  cleaned = cleaned.replace(/<[^>]*$/, ' ');
+
+  return cleaned
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 const VALID_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
