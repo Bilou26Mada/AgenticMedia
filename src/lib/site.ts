@@ -22,11 +22,11 @@ export interface CategoryDetail {
 
 export const CATEGORY_DETAILS: Record<string, CategoryDetail> = {
   'news-agentic': {
-    eyebrow: 'Live brief',
+    eyebrow: 'En continu',
     title: 'News Agentic',
     label: 'News',
     description:
-      'Sorties produit, modeles, protocoles, SDK, IDE agents, browser agents, voice agents et computer use.',
+      "Le pouls de l'écosystème agent IA : sorties de modèles, protocoles MCP, SDK, IDE et agents autonomes. Ce qui compte, trié sur le volet.",
     question: 'Quoi de neuf, et qu est-ce qui est vraiment exploitable ?',
     seoTitle: 'News Agentic AI | Actualites agents IA, MCP, SDK et tooling',
     seoDescription:
@@ -35,11 +35,11 @@ export const CATEGORY_DETAILS: Record<string, CategoryDetail> = {
     highlights: ['Protocoles et standards', 'Lancements produits', 'Agents de dev et browser agents'],
   },
   'use-cases': {
-    eyebrow: 'Field notes',
-    title: 'Use Cases Reels',
+    eyebrow: 'Retour terrain',
+    title: 'Use Cases Réels',
     label: 'Use Cases',
     description:
-      'Cas d usage concrets en software engineering, support client, ops, marketing, sales, finance et research ops.',
+      "Ce que les équipes déploient vraiment : engineering, support, ops, marketing, sales, finance. Sans filtre, avec les résultats et les frictions.",
     question: 'A quoi cela sert dans la pratique, au-dela des demos ?',
     seoTitle: 'Use Cases Agentic AI | Cas reels, ROI et workflows agents',
     seoDescription:
@@ -48,11 +48,11 @@ export const CATEGORY_DETAILS: Record<string, CategoryDetail> = {
     highlights: ['Retour terrain par fonction', 'ROI et friction d adoption', 'Limites operationnelles'],
   },
   'stack-tooling': {
-    eyebrow: 'Builder stack',
+    eyebrow: 'La boîte à outils',
     title: 'Stack & Tooling',
     label: 'Stack',
     description:
-      'MCP servers, frameworks, memory, evals, tracing, orchestration, identity, sandboxing et observability.',
+      "L infrastructure invisible qui fait tenir la promesse : serveurs MCP, mémoire, evals, tracing, orchestration, identité, sandboxing.",
     question: 'Comment on branche la stack sans tomber dans le bricolage ?',
     seoTitle: 'Stack Agentic AI | MCP, orchestration, memory, evals et tracing',
     seoDescription:
@@ -61,11 +61,11 @@ export const CATEGORY_DETAILS: Record<string, CategoryDetail> = {
     highlights: ['Architecture et outillage', 'Memory, tracing, evals', 'Identity et sandboxing'],
   },
   'bench-comparatifs': {
-    eyebrow: 'Reality check',
+    eyebrow: 'Tests & verdicts',
     title: 'Bench & Comparatifs',
     label: 'Bench',
     description:
-      'Benchmarks, comparatifs de plateformes, maturite produit, limites, couts et ecarts entre promesse marketing et execution.',
+      "On confronte les promesses à la réalité : benchmarks, comparatifs de plateformes, coûts réels, maturité produit et agent washing détecté.",
     question: 'Qui fait quoi pour de vrai, et dans quelles conditions ?',
     seoTitle: 'Bench Agentic AI | Comparatifs, maturite, couts et execution',
     seoDescription:
@@ -74,11 +74,11 @@ export const CATEGORY_DETAILS: Record<string, CategoryDetail> = {
     highlights: ['Comparatifs produits', 'Couts et maturite', 'Signal vs agent washing'],
   },
   'security-governance': {
-    eyebrow: 'Control layer',
+    eyebrow: 'La couche de contrôle',
     title: 'Governance & Security',
     label: 'Governance',
     description:
-      'Permissions, audit, secret management, tool-use hallucinations, policy controls, identity et human-in-the-loop.',
+      "Ce qui sépare une démo d un système exploitable : permissions, audit, secrets, hallucinations, policy controls et supervision humaine.",
     question: 'Est-ce serieux pour une equipe, un SI ou une production ?',
     seoTitle: 'Securite Agentic AI | Gouvernance, permissions, audit et controle',
     seoDescription:
@@ -87,11 +87,11 @@ export const CATEGORY_DETAILS: Record<string, CategoryDetail> = {
     highlights: ['Permissions et policy controls', 'Identity, audit, secrets', 'Garde-fous en production'],
   },
   'build-guides': {
-    eyebrow: 'Ship it',
+    eyebrow: 'Mode d emploi',
     title: 'Build Guides',
     label: 'Build',
     description:
-      'Tutoriels concrets pour lancer un agent de veille, brancher MCP, tracer un workflow multi-agent et evaluer un agent en prod.',
+      "Des guides concrets pour construire et lancer : agent de veille, serveur MCP, workflow multi-agent, evals en production.",
     question: 'Comment construire, tester et lancer un systeme agentique propre ?',
     seoTitle: 'Build Guides Agentic AI | Tutoriels MCP, evals et workflows agents',
     seoDescription:
@@ -100,11 +100,11 @@ export const CATEGORY_DETAILS: Record<string, CategoryDetail> = {
     highlights: ['Guides pas a pas', 'Patterns de build', 'Evaluation avant prod'],
   },
   formation: {
-    eyebrow: 'Learning loop',
+    eyebrow: 'Monter en niveau',
     title: 'Formation & Learning',
     label: 'Formation',
     description:
-      'Cours, tutoriels, learning paths, bootcamps teams et ressources pour monter en competence sur les agents IA, MCP et les workflows multi-agents.',
+      "Les ressources pour monter en compétence sans se noyer : cours, learning paths, bootcamps équipes et bases pour comprendre la stack.",
     question: 'Comment former rapidement une equipe ou monter en competence sans se noyer dans le bruit ?',
     seoTitle: 'Formation Agentic AI | Tutoriels, cours et learning paths sur les agents IA',
     seoDescription:
@@ -124,13 +124,13 @@ export const HOME_METRICS = [
   {
     title: 'Execution',
     value: 'Use cases, tooling, evals',
-    text: 'Ce que les equipes branchent vraiment, et le niveau de maturite observe.',
+    text: "Ce que les équipes branchent vraiment, et le niveau de maturité observé.",
     href: '/use-cases',
   },
   {
     title: 'Control',
     value: 'Permissions, audit, secrets',
-    text: 'La couche gouvernance qui separe une demo d un systeme exploitable.',
+    text: "La couche gouvernance qui sépare une démo d un système exploitable.",
     href: '/security-governance',
   },
 ];
@@ -138,12 +138,12 @@ export const HOME_METRICS = [
 export const HOME_QUESTIONS = [
   {
     title: 'Quoi de neuf ?',
-    text: 'Sorties produit, standards d integration, evolutions des SDK et plateformes agents.',
+    text: 'Sorties produit, standards d intégration, évolutions des SDK et plateformes agents.',
     href: '/',
   },
   {
-    title: 'A quoi ca sert ?',
-    text: 'Cas reels en dev, support, ops, marketing et fonctions metier a fort volume.',
+    title: 'À quoi ça sert ?',
+    text: "Cas réels en dev, support, ops, marketing et fonctions métier à fort volume.",
     href: '/use-cases',
   },
   {
@@ -152,8 +152,8 @@ export const HOME_QUESTIONS = [
     href: '/stack-tooling',
   },
   {
-    title: 'Est-ce serieux ?',
-    text: 'Bench, couts, maturite, securite, policy controls et human-in-the-loop.',
+    title: 'Est-ce sérieux ?',
+    text: 'Bench, coûts, maturité, sécurité, policy controls et human-in-the-loop.',
     href: '/security-governance',
   },
 ];
@@ -161,42 +161,42 @@ export const HOME_QUESTIONS = [
 export const EDITORIAL_FORMATS = [
   {
     title: 'Briefs',
-    text: 'Des brives tres courtes pour capter les signaux sans passer la journee dans le flux.',
+    text: "Des briefs très courts pour capter les signaux sans passer la journée dans le flux.",
     href: '/',
   },
   {
     title: 'Decryptages',
-    text: 'Le vrai impact produit, le niveau de maturite et les angles morts de chaque annonce.',
+    text: "Le vrai impact produit, le niveau de maturité et les angles morts de chaque annonce.",
     href: '/bench-comparatifs',
   },
   {
     title: 'Build guides',
-    text: 'Des tutoriels concrets pour brancher un agent, poser des garde-fous et mesurer l execution.',
+    text: "Des tutoriels concrets pour brancher un agent, poser des garde-fous et mesurer l exécution.",
     href: '/build-guides',
   },
   {
     title: 'Tool sheets',
-    text: 'Prix, cas d usage, limites et verdict operationnel par outil ou plateforme.',
+    text: "Prix, cas d usage, limites et verdict opérationnel par outil ou plateforme.",
     href: '/stack-tooling',
   },
 ];
 
 export const RADAR_AXES = [
   {
-    title: 'Type',
-    values: ['Framework', 'Protocol', 'Model', 'IDE', 'Browser', 'Infra', 'Security'],
+    title: 'Domaine',
+    values: ['Framework', 'Protocole', 'Modèle', 'IDE', 'Browser', 'Infra', 'Sécurité'],
   },
   {
-    title: 'Usage',
+    title: 'Métier',
     values: ['Dev', 'Support', 'Ops', 'Marketing', 'Research', 'Enterprise'],
   },
   {
-    title: 'Maturite',
-    values: ['Experimental', 'Beta', 'Production'],
+    title: 'Maturité',
+    values: ['Expérimental', 'Bêta', 'Production'],
   },
   {
     title: 'Verdict',
-    values: ['Hype', 'Promising', 'Solid'],
+    values: ['Hype', 'Prometteur', 'Solide'],
   },
 ];
 
@@ -233,8 +233,8 @@ export interface RadarBlipWithStories extends RadarBlip {
 export const RADAR_BLIPS: RadarBlip[] = [
   {
     id: '01',
-    label: 'Protocol layer',
-    note: 'MCP / tool use / response loops',
+    label: 'Couches & Protocoles',
+    note: 'MCP / tool use / boucles de réponse',
     x: '26%',
     y: '28%',
     tone: 'cyan',
@@ -243,8 +243,8 @@ export const RADAR_BLIPS: RadarBlip[] = [
   },
   {
     id: '02',
-    label: 'Builder stack',
-    note: 'Memory / tracing / orchestration',
+    label: 'Stack Technique',
+    note: 'Mémoire / tracing / orchestration',
     x: '70%',
     y: '24%',
     tone: 'lime',
@@ -253,8 +253,8 @@ export const RADAR_BLIPS: RadarBlip[] = [
   },
   {
     id: '03',
-    label: 'Execution',
-    note: 'Dev / support / ops agents',
+    label: 'Usage Métier',
+    note: 'Dev / support / agents ops',
     x: '74%',
     y: '58%',
     tone: 'cyan',
@@ -263,8 +263,8 @@ export const RADAR_BLIPS: RadarBlip[] = [
   },
   {
     id: '04',
-    label: 'Control',
-    note: 'Identity / secrets / audit',
+    label: 'Contrôle & Sécurité',
+    note: 'Identité / secrets / audit',
     x: '46%',
     y: '77%',
     tone: 'warm',
@@ -273,8 +273,8 @@ export const RADAR_BLIPS: RadarBlip[] = [
   },
   {
     id: '05',
-    label: 'Reality check',
-    note: 'Bench / cost / maturity',
+    label: 'État de l\'art',
+    note: 'Bench / coûts / maturité réelle',
     x: '18%',
     y: '66%',
     tone: 'lime',

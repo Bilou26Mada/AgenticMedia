@@ -42,10 +42,10 @@ export default function AgenticRadar({ items }: { items: RadarBlipWithStories[] 
 
       <div className="relative">
         <h2 className="mt-3 max-w-[16ch] text-[26px] font-semibold tracking-[-0.04em] text-brand-glass">
-          Une lecture plus claire du paysage agentic AI.
+          Une vision augmentée de l'écosystème IA.
         </h2>
         <p className="mt-3 max-w-[54ch] text-[14px] leading-relaxed text-brand-text/76">
-          Les signaux restent visibles sur la scene, mais l interpretation passe dans une legende lisible. Le resultat est plus calme et plus utile.
+          Les signaux faibles sont captés en amont, puis synthétisés pour une lecture stratégique immédiate.
         </p>
       </div>
 
@@ -148,7 +148,7 @@ export default function AgenticRadar({ items }: { items: RadarBlipWithStories[] 
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-brand-accent">
-                  Focus stories
+                  Actualités ciblées
                 </p>
                 <h3 className="mt-2 text-[22px] font-semibold tracking-[-0.04em] text-brand-glass">
                   {activeItem.label}
@@ -218,7 +218,7 @@ export default function AgenticRadar({ items }: { items: RadarBlipWithStories[] 
                       {axis.title}
                     </p>
                     <span className="text-[10px] uppercase tracking-[0.2em] text-brand-glass/36">
-                      {String(axis.values.length).padStart(2, '0')} tags
+                      {String(axis.values.length).padStart(2, '0')} valeurs
                     </span>
                   </div>
 

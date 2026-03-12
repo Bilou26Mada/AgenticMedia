@@ -39,9 +39,9 @@ export default function ThemeToggle({ variant = 'default' }: ThemeToggleProps) {
       className={clsx(
         'whitespace-nowrap rounded-full border font-medium uppercase transition-all duration-200',
         variant === 'default' &&
-          'px-3.5 py-2 text-[12px] tracking-[0.14em] border-white/10 text-white/72 hover:bg-white/6 hover:text-white',
+          'px-3.5 py-2 text-[12px] tracking-[0.14em] border-white/10 text-white/72 hover:bg-white/6 hover:text-white dark:border-white/10 dark:text-white/72 dark:hover:bg-white/6 dark:hover:text-white',
         variant === 'subtle' &&
-          'px-3 py-1.5 text-[10px] tracking-[0.2em] border-white/8 bg-white/[0.025] text-white/48 hover:border-white/14 hover:text-white/80'
+          'px-3 py-1.5 text-[10px] tracking-[0.2em] border-white/8 bg-white/[0.025] text-white/48 hover:border-white/14 hover:text-white/80 dark:border-white/8 dark:bg-white/[0.025] dark:text-white/48 dark:hover:border-white/14 dark:hover:text-white/80'
       )}
       aria-label="Basculer entre skin sombre et skin clair"
       title={theme === 'dark' ? 'Activer le skin clair' : 'Revenir au skin sombre'}

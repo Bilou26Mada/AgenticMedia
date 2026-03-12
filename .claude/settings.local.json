@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"C:\\\\Users\\\\westi\\\\Documents\\\\Tools\\\\IACTU - Copy\" && npm run dev)",
+      "Bash(taskkill /F /PID 15852 2>/dev/null; sleep 1; npm run dev)",
+      "Bash(Get-Process -Name node -ErrorAction SilentlyContinue | Stop-Process -Force; Remove-Item -Path \".next\\\\dev\\\\lock\" -Force -ErrorAction SilentlyContinue)",
+      "Bash(pkill -f node || true; rm -f \".next/dev/lock\" 2>/dev/null || true; sleep 2)",
+      "Bash(killall node:*)",
+      "Bash(npm run:*)",
+      "Bash(start chrome:*)",
+      "Bash(cd \"C:\\\\Users\\\\westi\\\\Documents\\\\Tools\\\\IACTU - Copy\" && npx tsc --noEmit 2>&1 | head -50)",
+      "Bash(cd \"C:\\\\Users\\\\westi\\\\Documents\\\\Tools\\\\IACTU - Copy\" && curl -s http://localhost:3000 2>&1 | head -50)",
+      "Bash(cd \"C:\\\\Users\\\\westi\\\\Documents\\\\Tools\\\\IACTU - Copy\" && npx tsc --noEmit 2>&1)",
+      "Bash(curl -s http://localhost:3001 2>&1 | head -100)",
+      "Bash(curl -s http://localhost:3000 2>&1 | head -5 || curl -s http://localhost:3001 2>&1 | head -5)",
+      "Bash(taskkill /F /PID 21776 2>&1 || echo \"Process not found\")",
+      "Bash(taskkill /F /PID 21776)",
+      "Bash(rm -f \"C:\\\\Users\\\\westi\\\\Documents\\\\Tools\\\\IACTU - Copy\\\\.next\\\\dev\\\\lock\" && netstat -ano | findstr :3000)"
+    ]
+  }
+}

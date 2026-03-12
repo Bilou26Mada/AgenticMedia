@@ -21,9 +21,9 @@ export const LANG_LABEL: Record<string, string> = {
 };
 
 export const SOURCE_TYPE_LABEL: Record<FeedSource['sourceType'], string> = {
-  official: 'Official',
-  builder: 'Builder',
-  analysis: 'Analysis',
+  official: 'Source Officielle',
+  builder: 'Build & Tech',
+  analysis: 'Analystes',
 };
 
 export interface FeedItem {
@@ -43,11 +43,11 @@ export interface CategorizedFeed {
 
 export const CATEGORIES = [
   { id: 'news-agentic', label: 'News', urlPath: '/' },
-  { id: 'use-cases', label: 'Use Cases', urlPath: '/use-cases' },
-  { id: 'stack-tooling', label: 'Stack', urlPath: '/stack-tooling' },
-  { id: 'bench-comparatifs', label: 'Bench', urlPath: '/bench-comparatifs' },
-  { id: 'security-governance', label: 'Governance', urlPath: '/security-governance' },
-  { id: 'build-guides', label: 'Build', urlPath: '/build-guides' },
+  { id: 'use-cases', label: 'Usage Métier', urlPath: '/use-cases' },
+  { id: 'stack-tooling', label: 'Stack Tech', urlPath: '/stack-tooling' },
+  { id: 'bench-comparatifs', label: 'Tests & Bench', urlPath: '/bench-comparatifs' },
+  { id: 'security-governance', label: 'Gouvernance', urlPath: '/security-governance' },
+  { id: 'build-guides', label: 'Build Guides', urlPath: '/build-guides' },
   { id: 'formation', label: 'Formation', urlPath: '/formation' },
 ] as const;
 
@@ -339,11 +339,37 @@ const FEED_DAY_FORMATTER = new Intl.DateTimeFormat('en-CA', {
   day: '2-digit',
 });
 
+function decodeEntities(text: string): string {
+  if (!text) return text;
+  return text
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#x27;/gi, "'")
+    .replace(/&apos;/gi, "'")
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&rsquo;/gi, "'")
+    .replace(/&lsquo;/gi, "'")
+    .replace(/&rdquo;/gi, '"')
+    .replace(/&ldquo;/gi, '"')
+    .replace(/&#8216;/g, "'")
+    .replace(/&#8217;/g, "'")
+    .replace(/&#8220;/g, '"')
+    .replace(/&#8221;/g, '"')
+    .replace(/&#8211;/g, '-')
+    .replace(/&ndash;/gi, '-')
+    .replace(/&#8212;/g, '--')
+    .replace(/&mdash;/gi, '--');
+}
+
 function cleanText(input?: string): string | undefined {
   if (!input) return undefined;
 
   const noHtml = input.replace(/<[^>]+>/g, ' ');
-  const normalized = noHtml.replace(/\s+/g, ' ').trim();
+  const decoded = decodeEntities(noHtml);
+  const normalized = decoded.replace(/\s+/g, ' ').trim();
   return normalized || undefined;
 }
 
@@ -417,7 +443,7 @@ function normalizeRssItem(source: FeedSource, item: Parser.Item): FeedItem | nul
 
   return {
     id: resolvedLink,
-    title: typeof item.title === 'string' ? item.title.replace(/\s+/g, ' ').trim() : String(item.title),
+    title: typeof item.title === 'string' ? decodeEntities(item.title).replace(/\s+/g, ' ').trim() : String(item.title),
     link: resolvedLink,
     pubDate: pubDate ?? '',
     contentSnippet: description,
@@ -429,19 +455,34 @@ function normalizeDate(input?: string) {
 }
 
 async function fetchRssItems(source: FeedSource): Promise<FeedItem[]> {
-  const timeoutPromise = new Promise<never>((_, reject) =>
-    setTimeout(() => reject(new Error(`RSS timeout for ${source.name}`)), 15000)
-  );
-  const feed = await Promise.race([
-    parser.parseURL(source.url),
-    timeoutPromise,
-  ]);
+  const MAX_RETRIES = 2;
+  let lastError: unknown;
 
-  return feed.items
-    .map((item) => normalizeRssItem(source, item))
-    .filter((item): item is FeedItem => Boolean(item))
-    .filter((item) => isRelevantItem(source, item))
-    .slice(0, 10);
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const timeoutPromise = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error(`RSS timeout for ${source.name}`)), 15000)
+      );
+      const feed = await Promise.race([
+        parser.parseURL(source.url),
+        timeoutPromise,
+      ]);
+
+      return feed.items
+        .map((item) => normalizeRssItem(source, item))
+        .filter((item): item is FeedItem => Boolean(item))
+        .filter((item) => isRelevantItem(source, item))
+        .slice(0, 10);
+    } catch (error) {
+      lastError = error;
+      if (attempt < MAX_RETRIES) {
+        console.log(`RSS retry ${attempt + 1}/${MAX_RETRIES} for ${source.name}`);
+        await new Promise((resolve) => setTimeout(resolve, 1000 * (attempt + 1)));
+      }
+    }
+  }
+
+  throw lastError;
 }
 
 function stripTags(input: string) {
@@ -452,11 +493,7 @@ function stripTags(input: string) {
   // Remove partial tag end at the completion (e.g., '<div class="bar')
   cleaned = cleaned.replace(/<[^>]*$/, ' ');
 
-  return cleaned
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&nbsp;/g, ' ')
+  return decodeEntities(cleaned)
     .replace(/\s+/g, ' ')
     .trim();
 }

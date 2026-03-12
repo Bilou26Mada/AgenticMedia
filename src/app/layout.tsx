@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import { IBM_Plex_Mono, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { SITE } from '@/lib/site';
-import ThemeToggle from '@/components/ThemeToggle';
+import { LanguageProvider } from '@/context/LanguageContext';
+import LayoutHeader from '@/components/LayoutHeader';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: [
       {
-        url: '/og-default.png', // TODO: Create a 1200x630 PNG image in /public/ folder
+        url: '/og-default.png',
         width: 1200,
         height: 630,
         alt: `${SITE.name} - media agentic AI`,
@@ -122,42 +123,15 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-brand-bg text-brand-text">
-        <div className="global-bg-scene pointer-events-none fixed inset-0 -z-20" />
-        <div className="global-bg-grid pointer-events-none fixed inset-0 -z-10" />
+        <LanguageProvider>
+          <div className="global-bg-scene pointer-events-none fixed inset-0 -z-20" />
+          <div className="global-bg-grid pointer-events-none fixed inset-0 -z-10" />
 
-        <main className="relative mx-auto max-w-[1240px] px-4 pb-16 pt-28 md:px-6">
-          <header className="mb-10 flex flex-col gap-6 border-b border-brand-glass/10 pb-8 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-[720px]">
-              <span className="inline-flex rounded-full border border-brand-glass/10 bg-brand-glass/[0.03] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-accent">
-                Agentic AI media
-              </span>
-              <p className="mt-4 text-[28px] font-semibold tracking-[-0.04em] text-brand-glass md:text-[36px]">
-                {SITE.name}
-              </p>
-              <p className="mt-2 max-w-[60ch] text-[15px] leading-relaxed text-brand-text/80">
-                {SITE.description}
-              </p>
-            </div>
-
-            <div className="flex w-full max-w-[420px] flex-col gap-3">
-              <div className="flex justify-start md:justify-end">
-                <ThemeToggle variant="subtle" />
-              </div>
-              <div className="grid gap-3 text-right text-[12px] md:grid-cols-2 md:text-left">
-                <div className="rounded-2xl border border-brand-glass/10 bg-brand-glass/[0.025] px-4 py-3">
-                  <p className="font-mono uppercase tracking-[0.22em] text-brand-text/48">Radar</p>
-                  <p className="mt-1 text-brand-glass/82">News, stack, bench and governance in one flow.</p>
-                </div>
-                <div className="rounded-2xl border border-brand-glass/10 bg-brand-glass/[0.025] px-4 py-3">
-                  <p className="font-mono uppercase tracking-[0.22em] text-brand-text/48">Angle</p>
-                  <p className="mt-1 text-brand-glass/82">From launch headline to operational verdict.</p>
-                </div>
-              </div>
-            </div>
-          </header>
-
-          {children}
-        </main>
+          <main className="relative mx-auto max-w-[1240px] px-4 pb-16 pt-28 md:px-6">
+            <LayoutHeader />
+            {children}
+          </main>
+        </LanguageProvider>
       </body>
     </html>
   );

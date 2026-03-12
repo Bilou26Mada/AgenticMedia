@@ -5,7 +5,7 @@ function formatFeedDate(input: string) {
   const date = new Date(input);
   if (Number.isNaN(date.getTime())) return 'Live';
 
-  const month = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(date);
+  const month = new Intl.DateTimeFormat('fr-FR', { month: 'short' }).format(date);
   const day = date.getDate().toString();
 
   return { month, day };
@@ -37,7 +37,7 @@ export default function FeedItem({
           target="_blank"
           rel="noopener noreferrer"
           className={clsx(
-            'font-medium leading-relaxed text-brand-glass/88 transition-colors group-hover:text-brand-accent',
+            'font-medium leading-relaxed text-brand-glass/88 transition-colors group-hover:text-brand-accent dark:text-brand-glass/88',
             isFeatured ? 'text-[18px] md:text-[20px]' : isCompact ? 'text-[14px]' : 'text-[15px]'
           )}
         >
@@ -46,7 +46,7 @@ export default function FeedItem({
 
         <div
           className={clsx(
-            'mt-0.5 flex flex-col items-center justify-center shrink-0 rounded-full border border-brand-glass/10 text-brand-glass/45',
+            'mt-0.5 flex flex-col items-center justify-center shrink-0 rounded-full border border-brand-glass/10 text-brand-glass/45 dark:text-brand-glass/45',
             isFeatured ? 'h-10 w-10' : 'h-9 w-9'
           )}
         >
@@ -70,7 +70,7 @@ export default function FeedItem({
       {item.contentSnippet && (
         <p
           className={clsx(
-            'mt-2 leading-relaxed text-brand-text/72',
+            'mt-2 leading-relaxed text-brand-text/72 dark:text-brand-text/72',
             isFeatured ? 'line-clamp-3 text-[14px]' : isCompact ? 'line-clamp-2 text-[12.5px]' : 'line-clamp-2 text-[13px]'
           )}
         >
