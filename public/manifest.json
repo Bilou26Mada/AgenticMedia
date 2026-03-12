@@ -1,0 +1,27 @@
+{
+  "name": "Agentic News",
+  "short_name": "Agentic News",
+  "description": "Le média francophone de référence sur les agents IA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05070a",
+  "theme_color": "#7df9ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["news", "technology", "education"],
+  "lang": "fr-FR",
+  "dir": "ltr"
+}

@@ -2,23 +2,29 @@ import { MetadataRoute } from 'next';
 import { CATEGORIES } from '@/lib/feeds';
 import { SITE } from '@/lib/site';
 
-const BUILD_DATE = new Date('2024-03-11');
-
+// Technical SEO Agent: Dynamic sitemap with proper change frequencies
 export default function sitemap(): MetadataRoute.Sitemap {
-  const categoryRoutes = CATEGORIES.map((category) => ({
-    url: `${SITE.url}${category.urlPath}`,
-    lastModified: BUILD_DATE,
-    changeFrequency: 'hourly' as const,
-    priority: category.id === 'news-agentic' ? 1.0 : 0.8,
-  }));
+  const now = new Date();
 
-  return [
+  // Static pages with appropriate priorities
+  const staticPages = [
     {
       url: SITE.url,
-      lastModified: BUILD_DATE,
-      changeFrequency: 'hourly',
+      lastModified: now,
+      changeFrequency: 'hourly' as const,
       priority: 1.0,
     },
-    ...categoryRoutes,
   ];
+
+  // Category pages
+  const categoryPages = CATEGORIES
+    .filter((cat) => cat.id !== 'news-agentic') // Homepage already included
+    .map((category) => ({
+      url: `${SITE.url}${category.urlPath}`,
+      lastModified: now,
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
+    }));
+
+  return [...staticPages, ...categoryPages];
 }
