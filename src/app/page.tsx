@@ -139,8 +139,8 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navigation />
-      <ResearchHighlight />
       <HomePageContent feeds={feeds} />
+      <ResearchHighlight />
     </>
   );
 }

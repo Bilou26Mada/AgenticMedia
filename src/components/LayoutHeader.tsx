@@ -3,6 +3,7 @@
 import { useLanguage } from '@/context/LanguageContext';
 import ThemeToggle from './ThemeToggle';
 import LanguageToggle from './LanguageToggle';
+import Clock from './Clock';
 
 export default function LayoutHeader() {
   const { t } = useLanguage();
@@ -10,9 +11,12 @@ export default function LayoutHeader() {
   return (
     <header className="mb-10 flex flex-col gap-6 border-b border-brand-glass/10 pb-8 md:flex-row md:items-end md:justify-between">
       <div className="max-w-[720px]">
-        <span className="inline-flex rounded-full border border-brand-glass/10 bg-brand-glass/[0.03] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-accent">
-          {t.tagline}
-        </span>
+        <div className="flex flex-wrap items-center gap-4">
+          <span className="inline-flex rounded-full border border-brand-glass/10 bg-brand-glass/[0.03] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-accent">
+            {t.tagline}
+          </span>
+          <Clock />
+        </div>
         <p className="mt-4 text-[28px] font-semibold tracking-[-0.04em] text-brand-glass md:text-[36px] dark:text-brand-glass">
           {t.siteName}
         </p>

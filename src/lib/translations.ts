@@ -173,8 +173,8 @@ export const translations: Record<Locale, Translation> = {
     // Layout
     siteName: 'Agentic News',
     siteDescription: 'Le media francophone qui suit ce que les agents savent reellement faire, avec quels outils, a quels couts, et avec quels risques.',
-    tagline: 'Agentic AI media',
-    angleDesc: 'From launch headline to operational verdict.',
+    tagline: 'Média IA Agentique',
+    angleDesc: "De l'annonce au verdict opérationnel.",
 
     // Navigation
     navNews: 'News',
