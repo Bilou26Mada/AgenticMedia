@@ -59,10 +59,10 @@ html[data-theme='light'] {
   --color-brand-surface: #f4f4f2;
   --color-brand-text: #1a1917;
   --color-brand-highlight: #000000;
-  --color-brand-accent: #003acc;
-  --color-brand-accent-2: #0d7a00;
-  --color-brand-warm: #9a3412;
-  --color-brand-success: #15803d;
+  --color-brand-accent: #0022cc; /* Darker, high-contrast professional blue */
+  --color-brand-accent-2: #0b6300; /* Darker professional green */
+  --color-brand-warm: #943a00; /* Darker orange/brown */
+  --color-brand-success: #0b6300;
   --color-brand-border: #d4d4d2;
   --color-brand-glass: #1a1917;
   --color-brand-overlay: #ffffff;
@@ -184,7 +184,22 @@ html[data-theme='light'] .bg-brand-overlay\/70 {
   background-color: rgb(0 0 0 / 0.04) !important;
 }
 
+/* Light theme - Aggressive Brand Accent Contrast Overrides */
+html[data-theme='light'] [class*='text-brand-accent'],
+html[data-theme='light'] [class*='text-brand-accent-2'],
+html[data-theme='light'] [class*='text-brand-warm'] {
+  color: var(--color-brand-accent) !important;
+}
 
+html[data-theme='light'] .text-brand-accent-2,
+html[data-theme='light'] [class*='text-brand-accent-2'] {
+  color: var(--color-brand-accent-2) !important;
+}
+
+html[data-theme='light'] .text-brand-warm,
+html[data-theme='light'] [class*='text-brand-warm'] {
+  color: var(--color-brand-warm) !important;
+}
 
 /* Light theme - Fix accent borders for better visibility */
 html[data-theme='light'] .border-brand-accent\/20,
