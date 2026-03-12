@@ -7,24 +7,56 @@ import { SITE } from '@/lib/site';
 
 export const revalidate = 60;
 
-// Content SEO Agent: Optimized metadata for homepage
+// Content SEO Agent: Premium keyword-optimized metadata
 export const metadata: Metadata = {
   title: {
-    default: 'Agentic News - Média Agentic AI & Agents IA',
+    default: 'Agentic News - Actualités Agents IA & Agentic AI France',
     template: '%s | Agentic News',
   },
-  description: 'Le média francophone de référence sur les agents IA : actualités, use cases, stack technique, benchmarks et guides pour maîtriser l\'intelligence artificielle agentique.',
+  description: 'Média francophone #1 sur les agents IA : actualités agentic AI, MCP, use cases entreprise, stack technique, benchmarks et formation. Veille IA agentique quotidienne.',
   keywords: [
+    // Core keywords - High volume
     'agentic ai',
     'agents ia',
     'intelligence artificielle agents',
-    'mcp protocol',
+    'ia agentique',
+    'agent ia',
+    // News & Actualité
     'actualité ia',
     'news agentic ai',
+    'veille intelligence artificielle',
+    'news ia france',
+    // MCP & Protocol
+    'mcp protocol',
+    'model context protocol',
+    'mcp servers',
+    'mcp anthropic',
+    // Technical keywords
+    'agents sdk',
     'framework agents ia',
-    'automation ia',
     'multi-agent systems',
+    'llm agents',
+    'ai orchestration',
+    'ai automation',
+    // Use cases & Business
+    'agents ia entreprise',
+    'automation ia',
+    'ai workflow',
+    'agents ia métier',
+    // Governance & Security
+    'gouvernance ia',
+    'agent governance',
+    'sécurité agents ia',
+    'ai security',
+    // Learning & Formation
     'formation agentic ai',
+    'cours agents ia',
+    'tutoriel ia',
+    'apprendre agentic ai',
+    // French-specific
+    'agentic ai france',
+    'intelligence artificielle france',
+    'média ia français',
   ],
   authors: [{ name: SITE.name }],
   creator: SITE.name,
@@ -45,7 +77,7 @@ export const metadata: Metadata = {
     alternateLocale: ['en_US'],
     url: SITE.url,
     siteName: SITE.name,
-    title: 'Agentic News - Le média Agentic AI de référence',
+    title: 'Agentic News - Le média Agentic AI de référence en France',
     description: 'Actualités, use cases, stack technique et gouvernance des agents IA. La référence francophone pour maîtriser l\'AI agentic.',
     images: [
       {

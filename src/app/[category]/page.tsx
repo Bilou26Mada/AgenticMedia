@@ -7,7 +7,7 @@ import { SITE } from '@/lib/site';
 
 export const revalidate = 300;
 
-// Content SEO Agent: Dynamic metadata for category pages
+// Content SEO Agent: Premium dynamic metadata for category pages
 export async function generateMetadata(
   props: { params: Promise<{ category: string }> }
 ): Promise<Metadata> {
@@ -25,42 +25,122 @@ export async function generateMetadata(
 
   const canonicalUrl = `${SITE.url}${cat.urlPath}`;
 
-  // Category-specific SEO metadata
+  // Content SEO Agent: Premium category-specific metadata with long-tail keywords
   const categoryMeta: Record<string, { title: string; description: string; keywords: string[] }> = {
     'news-agentic': {
-      title: 'Actualités Agentic AI - News IA & Agents',
-      description: 'Toute l\'actualité des agents IA : sorties de modèles, MCP, SDK, frameworks et outils pour l\'intelligence artificielle agentique.',
-      keywords: ['news agentic ai', 'actualité ia', 'agents ia news', 'mcp protocol', 'sdk agents'],
+      title: 'Actualités Agentic AI - News IA, MCP & Agents France',
+      description: 'Veille quotidienne sur les agents IA : sorties de modèles, MCP, SDK, frameworks. Toute l\'actualité agentic AI en français depuis la France.',
+      keywords: [
+        'news agentic ai',
+        'actualité agents ia',
+        'news ia france',
+        'mcp protocol news',
+        'agents sdk news',
+        'sorties modèles ia',
+        'anthropic claude news',
+        'openai agents news',
+        'google ai news',
+        'veille intelligence artificielle',
+      ],
     },
     'use-cases': {
-      title: 'Use Cases Agentic AI - Cas d\'usage Entreprise',
-      description: 'Découvrez comment les entreprises utilisent les agents IA : développement, support, operations, marketing et plus.',
-      keywords: ['use cases ia', 'agents ia entreprise', 'cas usage agentic ai', 'automation ia'],
+      title: 'Use Cases Agents IA - Cas d\'Usage Entreprise & ROI',
+      description: 'Découvrez comment les entreprises utilisent les agents IA : développement, support client, operations, marketing. Retours terrain et ROI mesuré.',
+      keywords: [
+        'use cases ia',
+        'cas usage agents ia',
+        'agents ia entreprise',
+        'roi intelligence artificielle',
+        'automation ia métier',
+        'agents ia support client',
+        'ai coding agents',
+        'agents ia operations',
+        'marketing automation ia',
+        'agents ia finance',
+      ],
     },
     'stack-tooling': {
-      title: 'Stack & Tooling Agentic AI - Outils & Frameworks',
-      description: 'La stack technique des agents IA : MCP servers, mémoire, tracing, orchestration, evals et outils de développement.',
-      keywords: ['stack agentic ai', 'mcp servers', 'framework agents', 'tooling ia', 'orchestration agents'],
+      title: 'Stack & Tooling Agentic AI - MCP, Orchestration & Outils',
+      description: 'La stack technique des agents IA : serveurs MCP, mémoire, tracing, orchestration, evals. Comparatifs d\'outils et guides d\'implémentation.',
+      keywords: [
+        'stack agentic ai',
+        'mcp servers',
+        'orchestration agents ia',
+        'framework agents',
+        'langchain',
+        'auto-gen microsoft',
+        'crew ai',
+        'ai tracing',
+        'ai evals',
+        'memory agents ia',
+        'ai observability',
+        'tooling ia',
+      ],
     },
     'bench-comparatifs': {
-      title: 'Benchmarks & Comparatifs Agents IA',
-      description: 'Comparatifs et benchmarks des plateformes, frameworks et agents IA. Tests objectifs et analyses détaillées.',
-      keywords: ['benchmark agents ia', 'comparatif ia', 'test agents ai', 'evaluation llm'],
+      title: 'Benchmarks & Comparatifs Agents IA - Tests & Verdicts',
+      description: 'Comparatifs objectifs des plateformes et frameworks d\'agents IA. Benchmarks, tests de performance et analyse coût/performance.',
+      keywords: [
+        'benchmark agents ia',
+        'comparatif ia',
+        'test agents ai',
+        'évaluation llm',
+        'comparatif framework ia',
+        'performance agents ia',
+        'coût agents ia',
+        'maturité ia',
+        'agent washing',
+        'verdict ia',
+      ],
     },
     'security-governance': {
-      title: 'Sécurité & Gouvernance Agentic AI',
-      description: 'Tout sur la sécurité, les permissions, l\'audit et la gouvernance des systèmes d\'agents IA en entreprise.',
-      keywords: ['sécurité ia', 'gouvernance agents', 'audit ia', 'compliance agents'],
+      title: 'Sécurité & Gouvernance Agents IA - Compliance & Audit',
+      description: 'Tout sur la sécurité, permissions, audit et gouvernance des systèmes d\'agents IA. Policy controls, secrets management et supervision humaine.',
+      keywords: [
+        'sécurité ia',
+        'gouvernance agents',
+        'audit intelligence artificielle',
+        'compliance ia',
+        'agent security',
+        'permissions agents ia',
+        'policy controls ia',
+        'human in the loop',
+        'secrets management ia',
+        'ai ethics',
+        'ai risk management',
+      ],
     },
     'build-guides': {
-      title: 'Build Guides - Tutoriels Agentic AI',
-      description: 'Guides pratiques pour construire des agents IA : tutoriels, patterns d\'architecture et best practices.',
-      keywords: ['tutoriel agents ia', 'guide agentic ai', 'créer agent ia', 'formation ia'],
+      title: 'Build Guides - Tutoriels & Guides Pratiques Agentic AI',
+      description: 'Guides pas-à-pas pour construire des agents IA : tutoriels MCP, workflows multi-agents, evals en production. Code et best practices.',
+      keywords: [
+        'tutoriel agents ia',
+        'guide agentic ai',
+        'créer agent ia',
+        'formation ia pratique',
+        'mcp tutorial',
+        'workflow multi-agents',
+        'agents ia production',
+        'code agents ia',
+        'best practices ia',
+        'implémentation agents',
+      ],
     },
     'formation': {
-      title: 'Formation Agentic AI - Cours & Ressources',
-      description: 'Ressources de formation sur les agents IA : cours, learning paths, bootcamps et guides d\'apprentissage.',
-      keywords: ['formation agentic ai', 'cours agents ia', 'learning path ia', 'bootcamp ia'],
+      title: 'Formation Agentic AI - Cours, Bootcamps & Ressources IA',
+      description: 'Ressources complètes pour se former aux agents IA : cours en ligne, learning paths, bootcamps, certifications. Montez en compétence sur l\'AI agentic.',
+      keywords: [
+        'formation agentic ai',
+        'cours agents ia',
+        'learning path ia',
+        'bootcamp intelligence artificielle',
+        'certification ia',
+        'apprendre agents ia',
+        'formation continue ia',
+        'école ia france',
+        'mooc agents ia',
+        'ressources pédagogiques ia',
+      ],
     },
   };
 
@@ -73,7 +153,7 @@ export async function generateMetadata(
   return {
     title: meta.title,
     description: meta.description,
-    keywords: [...meta.keywords, 'agentic ai', 'agents ia', SITE.name],
+    keywords: [...meta.keywords, 'agentic ai', 'agents ia', 'intelligence artificielle', SITE.name],
     alternates: {
       canonical: canonicalUrl,
       languages: {

@@ -16,40 +16,77 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ['400', '500', '600'],
 });
 
-// Technical SEO Agent: Enhanced metadata for elite SEO
+// Technical SEO Agent: Premium keyword-optimized metadata
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} - Agentic AI Media & News`,
+    default: 'Agentic News - Média Agentic AI & Agents IA France',
     template: `%s | ${SITE.name}`,
   },
-  description: 'Le media francophone de référence sur les agents IA : actualités, use cases, stack technique, benchmarks, gouvernance et guides pratiques pour maîtriser l\'AI agentic.',
+  description: 'Média francophone #1 sur les agents IA : actualités agentic AI, MCP, use cases, stack technique, benchmarks et formation. Veille IA agentique experte depuis la France.',
   keywords: [
-    // Core keywords FR
+    // Core keywords FR (High Priority)
     'agentic ai',
     'agents ia',
     'intelligence artificielle agents',
+    'ia agentique',
+    'agent ia',
+    'intelligence artificielle',
+    // MCP & Protocol (Technical)
     'mcp protocol',
     'model context protocol',
+    'mcp servers',
+    'anthropic mcp',
+    'mcp integration',
+    // SDK & Frameworks
     'agents sdk',
+    'framework agents ia',
+    'langchain agents',
+    'auto-gen',
+    'crew ai',
     'multi-agent systems',
-    'ai automation',
-    'agent governance',
-    'agent security',
-    // English keywords
-    'agentic ai news',
-    'ai agents',
-    'autonomous agents',
+    // Technical infrastructure
     'ai orchestration',
     'llm agents',
-    'ai workflow automation',
-    // Technical keywords
+    'ai automation',
+    'ai workflow',
     'responses api',
     'ai coding agents',
     'browser agents',
-    'mcp servers',
+    'mcp servers list',
     'ai tooling',
+    // Business & Use Cases
+    'agents ia entreprise',
+    'ai business automation',
+    'use cases ia',
+    'agents ia métier',
+    'automation intelligente',
+    // Governance & Security
+    'agent governance',
+    'gouvernance ia',
+    'agent security',
+    'sécurité ia',
+    'ai ethics',
+    'ai compliance',
+    'human in the loop',
+    // Learning & Formation FR
     'formation agentic ai',
+    'formation agents ia',
+    'cours intelligence artificielle',
+    'tutoriel ia',
+    'apprendre agents ia',
+    'bootcamp ia',
+    // Location-specific
+    'agentic ai france',
+    'intelligence artificielle france',
+    'média ia français',
+    'news ia france',
+    // English keywords (for international)
+    'agentic ai news',
+    'ai agents',
+    'autonomous agents',
+    'agentic workflow',
+    'llm orchestration',
   ],
   authors: [{ name: SITE.name }],
   creator: SITE.name,
@@ -76,14 +113,14 @@ export const metadata: Metadata = {
     alternateLocale: ['en_US', 'en_GB'],
     url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name} - Le média Agentic AI de référence`,
+    title: 'Agentic News - Le média Agentic AI de référence',
     description: 'Actualités, use cases, stack technique et gouvernance des agents IA. La référence francophone pour maîtriser l\'AI agentic.',
     images: [
       {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: `${SITE.name} - Agentic AI Media & News`,
+        alt: 'Agentic News - Agentic AI Media France',
         type: 'image/png',
       },
     ],
@@ -91,7 +128,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: SITE.name,
-    description: 'Le média francophone de référence sur les agents IA',
+    description: 'Média francophone #1 sur les agents IA et l\'AI agentic',
     images: ['/og-default.png'],
     creator: '@agenticnews',
   },
